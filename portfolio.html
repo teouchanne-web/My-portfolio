@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teo Uchaneishvili | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #4a8517;
+    font-family: 'Raleway', sans-serif;
+    color: #C8A97E;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 16px 20px;
+    background: #4a8517;
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    text-decoration: none;
+    color: #C8A97E;
+    font-size: 25px;
+    font-weight: bold;
+    transition: 0.3s; 
+    border: 2px solid transparent;
+}
+
+nav a:hover {
+    color: white; 
+    border: 2px solid white;
+}
+
+/* HERO */
+.hero {
+    min-height: auto; /* ← შეცვალე */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 170px 20px 120px;  
+}
+
+.hero h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 64px;
+    color: #C8A97E;
+    margin-bottom: 4px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 600px;
+    line-height: 1.7;
+    color: #C8A97E; 
+    margin-top: 0;
+}
+
+/* PROJECTS */
+section {
+    padding: 5px 40px 120px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 36px;
+    color: #C8A97E;
+    margin-bottom: 40px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.15);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 24px;
+    text-align: left;
+}
+
+.project-info h3 {
+    font-size: 20px;
+    color: #F5F5DC;
+    margin-bottom: 8px;
+}
+
+.project-info p {
+    font-size: 14px;
+    color: rgba(245,245,220,0.7);
+    margin-bottom: 16px;
+}
+
+.btn {
+    background-color: #C8A97E;
+    color: #4a8517;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #4a8517;
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #C8A97E;
+    font-size: 13px; 
+     margin-top: 0px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero {
+        padding: 100px 20px 30px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 20px 20px 40px; /* ← გვერდები 40px-დან 20px-ზე */
+    }
+} 
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.15);
+    color: #F5F5DC;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(200,169,126,0.7);
+}
+
+.contact-form button {
+    background-color: #C8A97E;
+    color: #4a8517;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: white;
+    transform: scale(1.03);
+}
+#contact {
+    margin-top: 80px;
+}  
+
+nav a.active {
+    color: white; 
+    
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    animation: fadeIn 1s ease both;
+}
+
+.hero p {
+    animation: fadeIn 1s 0.3s ease both;
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+    <h1>Teo Uchaneishvili</h1>
+    <p>Welcome to my portfolio 🤎 </p>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects"> 
+    <h2>Projects</h2>
+    <div class="projects-grid"> 
+        
+
+       <div class="project-card">
+    <div class="project-info">
+        <h3>Mia Art Gallery</h3>
+        <p>Art gallery website built with HTML, CSS & JavaScript</p>
+        <a href="https://teouchanne-web.github.io/miaartgallery/" class="btn" target="_blank">View Project →</a>
+    </div>
+</div>
+
+        <div class="project-card">
+    <div class="project-info">
+        <h3>Coming Soon 🚀</h3>
+        <p>New project in progress...</p>
+        <a href="comingsoon.html" class="btn">Soon →</a>
+    </div>
+</div>
+
+    </div>  
+
+    </section> 
+    <!-- CONTACT -->
+<section id="contact">
+    <h2>Contact</h2>
+    <form action="https://formspree.io/f/mojrzppg" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name">
+        <input type="email" name="email" placeholder="Your Email">
+        <textarea rows="5" name="message" placeholder="Your Message..."></textarea>
+        <button type="submit">Send Message →</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Teo Uchaneishvili. All Rights Reserved.</p>
+</footer>
+<script>
+const navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+    });
+}); 
+
+const h1 = document.querySelector('.hero h1');
+const text = h1.textContent;
+h1.textContent = '';
+
+text.split('').forEach((char, i) => {
+    const span = document.createElement('span');
+    span.textContent = char === ' ' ? '\u00A0' : char;
+    span.classList.add('wave-letter');
+    span.style.animationDelay = `${i * 0.1}s`;
+    h1.appendChild(span);
+}); 
+
+</script>
+</body>
+</html>
