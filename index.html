@@ -37,24 +37,27 @@ nav a {
     color: #C8A97E;
     font-size: 25px;
     font-weight: bold;
-    transition: 0.3s; 
+    transition: 0.3s;
     border: 2px solid transparent;
 }
 
 nav a:hover {
-    color: white; 
+    color: white;
     border: 2px solid white;
+}
+
+nav a.active {
+    color: white;
 }
 
 /* HERO */
 .hero {
-    min-height: auto; /* ← შეცვალე */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 170px 20px 120px;  
+    padding: 170px 20px 120px;
 }
 
 .hero h1 {
@@ -62,19 +65,26 @@ nav a:hover {
     font-size: 64px;
     color: #C8A97E;
     margin-bottom: 4px;
+    animation: fadeIn 1s ease both;
 }
 
 .hero p {
     font-size: 20px;
     max-width: 600px;
     line-height: 1.7;
-    color: #C8A97E; 
+    color: #C8A97E;
     margin-top: 0;
+    animation: fadeIn 1s 0.3s ease both;
 }
 
-/* PROJECTS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTIONS */
 section {
-    padding: 5px 40px 120px;
+    padding: 60px 40px 80px;
     text-align: center;
 }
 
@@ -86,6 +96,53 @@ section h2 {
     text-transform: uppercase;
 }
 
+/* SKILLS */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(200,169,126,0.4);
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    text-align: left;
+}
+
+.skill-card h3 {
+    font-size: 18px;
+    color: #F5F5DC;
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    font-size: 13px;
+    color: rgba(245,245,220,0.7);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.skill-bar {
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.skill-bar span {
+    display: block;
+    height: 100%;
+    background: #C8A97E;
+    border-radius: 2px;
+}
+
+/* PROJECTS */
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -148,41 +205,11 @@ section h2 {
     transform: scale(1.05);
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: #C8A97E;
-    font-size: 13px; 
-     margin-top: 0px;
+/* CONTACT */
+#contact {
+    margin-top: 40px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero p {
-        font-size: 15px;
-    }
-
-    .hero {
-        padding: 100px 20px 30px;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    nav a {
-        font-size: 16px;
-    }
-
-    section {
-        padding: 20px 20px 40px; /* ← გვერდები 40px-დან 20px-ზე */
-    }
-} 
 .contact-form {
     max-width: 500px;
     margin: 0 auto;
@@ -225,62 +252,46 @@ footer {
     background-color: white;
     transform: scale(1.03);
 }
-#contact {
-    margin-top: 80px;
-}  
 
-nav a.active {
-    color: white; 
-    
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #C8A97E;
+    font-size: 13px;
 }
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 40px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero {
+        padding: 100px 20px 30px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 40px 20px 60px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 }
 
-.hero h1 {
-    animation: fadeIn 1s ease both;
-}
-
-.hero p {
-    animation: fadeIn 1s 0.3s ease both;
-} 
-#skills { padding: 10px 40px 80px; }
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.skill-card {
-  border: 1px solid #e5e0da;
-  border-radius: 12px;
-  padding: 1.25rem;
-}
-
-.skill-bar {
-  height: 4px;
-  background: #f0ebe6;
-  border-radius: 2px;
-  overflow: hidden;
-  margin-top: 1rem;
-}
-
-.skill-bar span {
-  display: block;
-  height: 100%;
-  background: #8B6F47;
-  border-radius: 2px;
-}
 </style>
 </head>
 <body>
@@ -288,80 +299,81 @@ nav a.active {
 <nav>
     <a href="#home">Home</a>
     <a href="#projects">Projects</a>
-    
     <a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
 <div class="hero" id="home">
     <h1>Teo Uchaneishvili</h1>
-    <p>Welcome to my portfolio 🤎 </p>
-</div> 
-
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-
-    <div class="skill-card">
-      <h3>HTML</h3>
-      <p>Semantic markup, accessibility, page structure</p>
-      <div class="skill-bar"><span style="width: 75%"></span></div>
-    </div>
-
-    <div class="skill-card">
-      <h3>CSS</h3>
-      <p>Flexbox, Grid, animations, responsive design</p>
-      <div class="skill-bar"><span style="width: 70%"></span></div>
-    </div>
-
-    <div class="skill-card">
-      <h3>JavaScript</h3>
-      <p>DOM manipulation, events, async code</p>
-      <div class="skill-bar"><span style="width: 50%"></span></div>
-    </div>
-
-  </div>
-</section>
-<!-- PROJECTS -->
-<section id="projects"> 
-    <h2>Projects</h2>
-    <div class="projects-grid"> 
-        
-
-       <div class="project-card">
-    <div class="project-info">
-        <h3>Mia Art Gallery</h3>
-        <p>Art gallery website built with HTML, CSS & JavaScript</p>
-        <a href="https://teouchanne-web.github.io/miaartgallery/" class="btn" target="_blank">View Project →</a>
-    </div>
+    <p>Welcome to my portfolio 🤎</p>
 </div>
+
+<!-- SKILLS -->
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <h3>HTML</h3>
+            <p>Semantic markup, accessibility, page structure</p>
+            <div class="skill-bar"><span style="width: 75%"></span></div>
+        </div>
+
+        <div class="skill-card">
+            <h3>CSS</h3>
+            <p>Flexbox, Grid, animations, responsive design</p>
+            <div class="skill-bar"><span style="width: 70%"></span></div>
+        </div>
+
+        <div class="skill-card">
+            <h3>JavaScript</h3>
+            <p>DOM manipulation, events, async code</p>
+            <div class="skill-bar"><span style="width: 50%"></span></div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
 
         <div class="project-card">
-    <div class="project-info">
-        <h3>Coming Soon 🚀</h3>
-        <p>New project in progress...</p>
-        <a href="comingsoon.html" class="btn">Soon →</a>
+            <div class="project-info">
+                <h3>Mia Art Gallery</h3>
+                <p>Art gallery website built with HTML, CSS & JavaScript</p>
+                <a href="https://teouchanne-web.github.io/miaartgallery/" class="btn" target="_blank">View Project →</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-info">
+                <h3>Coming Soon 🚀</h3>
+                <p>New project in progress...</p>
+                <a href="comingsoon.html" class="btn">Soon →</a>
+            </div>
+        </div>
+
     </div>
-</div>
+</section>
 
-    </div>  
-
-    </section> 
-    <!-- CONTACT -->
+<!-- CONTACT -->
 <section id="contact">
     <h2>Contact</h2>
-   <form action="https://formspree.io/f/meedonql" method="POST" class="contact-form">
+    <form action="https://formspree.io/f/meedonql" method="POST" class="contact-form">
         <input type="text" name="name" placeholder="Your Name">
         <input type="email" name="email" placeholder="Your Email">
         <textarea rows="5" name="message" placeholder="Your Message..."></textarea>
         <button type="submit">Send Message →</button>
-</form>
+    </form>
 </section>
 
 <!-- FOOTER -->
 <footer>
     <p>© 2026 Teo Uchaneishvili. All Rights Reserved.</p>
 </footer>
+
 <script>
 const navLinks = document.querySelectorAll('nav a');
 
@@ -370,7 +382,7 @@ navLinks.forEach(link => {
         navLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
     });
-}); 
+});
 
 const h1 = document.querySelector('.hero h1');
 const text = h1.textContent;
@@ -382,8 +394,8 @@ text.split('').forEach((char, i) => {
     span.classList.add('wave-letter');
     span.style.animationDelay = `${i * 0.1}s`;
     h1.appendChild(span);
-}); 
-
+});
 </script>
+
 </body>
 </html>
