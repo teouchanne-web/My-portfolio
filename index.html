@@ -250,6 +250,36 @@ nav a.active {
 
 .hero p {
     animation: fadeIn 1s 0.3s ease both;
+} 
+#skills { padding: 10px 40px 80px; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  border: 1px solid #e5e0da;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.skill-bar {
+  height: 4px;
+  background: #f0ebe6;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.skill-bar span {
+  display: block;
+  height: 100%;
+  background: #8B6F47;
+  border-radius: 2px;
 }
 </style>
 </head>
@@ -266,8 +296,32 @@ nav a.active {
 <div class="hero" id="home">
     <h1>Teo Uchaneishvili</h1>
     <p>Welcome to my portfolio 🤎 </p>
-</div>
+</div> 
 
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <h3>HTML</h3>
+      <p>Semantic markup, accessibility, page structure</p>
+      <div class="skill-bar"><span style="width: 75%"></span></div>
+    </div>
+
+    <div class="skill-card">
+      <h3>CSS</h3>
+      <p>Flexbox, Grid, animations, responsive design</p>
+      <div class="skill-bar"><span style="width: 70%"></span></div>
+    </div>
+
+    <div class="skill-card">
+      <h3>JavaScript</h3>
+      <p>DOM manipulation, events, async code</p>
+      <div class="skill-bar"><span style="width: 50%"></span></div>
+    </div>
+
+  </div>
+</section>
 <!-- PROJECTS -->
 <section id="projects"> 
     <h2>Projects</h2>
@@ -296,7 +350,7 @@ nav a.active {
     <!-- CONTACT -->
 <section id="contact">
     <h2>Contact</h2>
-    <form action="https://formspree.io/f/meedonql" method="POST" class="contact-form">
+   <form action="https://formspree.io/f/meedonql" method="POST" class="contact-form">
         <input type="text" name="name" placeholder="Your Name">
         <input type="email" name="email" placeholder="Your Email">
         <textarea rows="5" name="message" placeholder="Your Message..."></textarea>
