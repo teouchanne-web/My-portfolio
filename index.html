@@ -64,17 +64,31 @@ nav a.active {
     font-family: 'Raleway', sans-serif;
     font-size: 64px;
     color: #C8A97E;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
     animation: fadeIn 1s ease both;
+} 
+.hero h2 {
+    margin-bottom: 20px;
+    color: #C8A97E;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 .hero p {
     font-size: 20px;
     max-width: 600px;
-    line-height: 1.7;
+    line-height: 1.6;
     color: #C8A97E;
     margin-top: 0;
     animation: fadeIn 1s 0.3s ease both;
+} 
+.hero-description {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.hero-welcome {
+    margin-top: 0;
 }
 
 @keyframes fadeIn {
@@ -298,14 +312,20 @@ footer {
 
 <nav>
     <a href="#home">Home</a>
-    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a> 
     <a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
 <div class="hero" id="home">
     <h1>Teo Uchaneishvili</h1>
-    <p>Welcome to my portfolio 🤎</p>
+    <h2>Front-End Web Developer</h2>
+
+    <p>
+        Creating modern and responsive websites <br>
+        for businesses and individuals.
+    </p>
 </div>
 
 <!-- SKILLS -->
@@ -337,7 +357,15 @@ footer {
 <!-- PROJECTS -->
 <section id="projects">
     <h2>Projects</h2>
-    <div class="projects-grid">
+    <div class="projects-grid"> 
+
+         <div class="project-card">
+            <div class="project-info">
+                <h3>Gymnasium</h3>
+                <p>A fitness website built with HTML, CSS & JavaScript</p>
+                <a href="https://teouchanne-web.github.io/Gymnasium/index.html" class="btn" target="_blank">View Project →</a>
+            </div> 
+            </div>
 
         <div class="project-card">
             <div class="project-info">
@@ -354,13 +382,7 @@ footer {
                 <a href="https://teouchanne-web.github.io/coffeeshop/index.html" class="btn" target="_blank">View Project →</a>
             </div> 
             </div> 
-            <div class="project-card">
-            <div class="project-info">
-                <h3>Gymnasium</h3>
-                <p>A fitness website built with HTML, CSS & JavaScript</p>
-                <a href="https://teouchanne-web.github.io/Gymnasium/index.html" class="btn" target="_blank">View Project →</a>
-            </div> 
-            </div>
+           
         <div class="project-card">
             <div class="project-info">
                 <h3>Coming Soon 🚀</h3>
@@ -371,6 +393,7 @@ footer {
 
     </div>
 </section>
+
 <!-- CONTACT -->
 <section id="contact">
     <h2>Contact</h2>
